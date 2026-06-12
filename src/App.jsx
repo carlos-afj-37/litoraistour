@@ -1,4 +1,5 @@
 import "./index.css";
+import { Link } from "react-router-dom";
 
 function App() {
 const tours = [
@@ -38,19 +39,32 @@ const destinos = [
 ];
 
 return (
-<> <header className="navbar"> <div className="logo">Litorais Tour</div>
+<> <header className="navbar"> 
+  
+  <div className="logo">
+  🌴 Litorais Tour
+</div>
 
-```
+
     <nav>
       <a href="#">Início</a>
       <a href="#">Passeios</a>
       <a href="#">Destinos</a>
       <a href="#">Sobre</a>
       <a href="#">Contato</a>
+
+      <a href="/litoraistour/admin">
+     Painel Admin
+      </a>
+
     </nav>
 
     <div className="buttons">
-      <button className="login-btn">Entrar</button>
+      <Link to="/login">
+  <button className="login-btn">
+    Entrar
+  </button>
+</Link>
       <button className="reserve-btn">Reservar Agora</button>
     </div>
   </header>
@@ -147,6 +161,40 @@ return (
     </div>
   </section>
 
+  <section className="depoimentos">
+
+<h2>O que nossos clientes dizem</h2>
+
+<div className="cards">
+
+<div className="card">
+⭐⭐⭐⭐⭐
+<p>
+Passeio incrível para Jericoacoara.
+</p>
+<strong>Maria Silva</strong>
+</div>
+
+<div className="card">
+⭐⭐⭐⭐⭐
+<p>
+Atendimento impecável.
+</p>
+<strong>João Costa</strong>
+</div>
+
+<div className="card">
+⭐⭐⭐⭐⭐
+<p>
+Voltarei a contratar.
+</p>
+<strong>Ana Souza</strong>
+</div>
+
+</div>
+
+</section>
+
   <section className="processo">
     <h2>Como Funciona</h2>
 
@@ -159,14 +207,28 @@ return (
   </section>
 
   <footer>
-    <h3>Litorais Tour</h3>
 
-    <p>WhatsApp: (85) 99999-9999</p>
-    <p>Instagram: @litoraistour</p>
-    <p>Email: contato@litoraistour.com.br</p>
+<h3>Litorais Tour</h3>
 
-    <p>© 2026 Todos os direitos reservados</p>
-  </footer>
+<p>Fortaleza - Ceará</p>
+
+<div className="social">
+
+<a href="#">Instagram</a>
+
+<a href="#">Facebook</a>
+
+<a href="#">TikTok</a>
+
+<a href="#">YouTube</a>
+
+</div>
+
+<p>
+© 2026 Litorais Tour
+</p>
+
+</footer>
 
   <a
     href="https://wa.me/5585999999999"
@@ -175,6 +237,14 @@ return (
   >
     💬
   </a>
+
+  <a
+  href="https://wa.me/5585999999999"
+  target="_blank"
+  className="whatsapp"
+>
+  WhatsApp
+</a>
 </>
 
 
