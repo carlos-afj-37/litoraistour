@@ -161,39 +161,7 @@ return (
     </div>
   </section>
 
-  <section className="depoimentos">
-
-<h2>O que nossos clientes dizem</h2>
-
-<div className="cards">
-
-<div className="card">
-⭐⭐⭐⭐⭐
-<p>
-Passeio incrível para Jericoacoara.
-</p>
-<strong>Maria Silva</strong>
-</div>
-
-<div className="card">
-⭐⭐⭐⭐⭐
-<p>
-Atendimento impecável.
-</p>
-<strong>João Costa</strong>
-</div>
-
-<div className="card">
-⭐⭐⭐⭐⭐
-<p>
-Voltarei a contratar.
-</p>
-<strong>Ana Souza</strong>
-</div>
-
-</div>
-
-</section>
+  
 
   <section className="processo">
     <h2>Como Funciona</h2>
