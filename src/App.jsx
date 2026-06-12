@@ -1,98 +1,184 @@
 import "./index.css";
 
 function App() {
-  const tours = [
-    {
-      nome: "Jericoacoara Premium",
-      preco: "R$ 189,90",
-      imagem:
-        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    },
-    {
-      nome: "Canoa Quebrada",
-      preco: "R$ 149,90",
-      imagem:
-        "https://images.unsplash.com/photo-1519046904884-53103b34b206",
-    },
-    {
-      nome: "Lagoinha",
-      preco: "R$ 139,90",
-      imagem:
-        "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
-    },
-  ];
+const tours = [
+{
+nome: "Jericoacoara Premium",
+preco: "R$ 189,90",
+local: "Jericoacoara - CE",
+nota: "4.9",
+imagem:
+"https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+},
+{
+nome: "Canoa Quebrada",
+preco: "R$ 149,90",
+local: "Aracati - CE",
+nota: "4.8",
+imagem:
+"https://images.unsplash.com/photo-1519046904884-53103b34b206",
+},
+{
+nome: "Lagoinha",
+preco: "R$ 139,90",
+local: "Paraipaba - CE",
+nota: "4.7",
+imagem:
+"https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
+},
+];
 
-  return (
-    <>
-      <header className="navbar">
-        <h2>Litorais Tour</h2>
+const destinos = [
+"Jericoacoara",
+"Canoa Quebrada",
+"Beach Park",
+"Lagoinha",
+"Morro Branco",
+"Paracuru",
+];
 
-        <nav>
-          <a href="#">Início</a>
-          <a href="#">Passeios</a>
-          <a href="#">Destinos</a>
-          <a href="#">Contato</a>
-          <button>Entrar</button>
-        </nav>
-      </header>
+return (
+<> <header className="navbar"> <div className="logo">Litorais Tour</div>
 
-      <section className="hero">
-        <div className="overlay">
-          <h1>Descubra os Melhores Passeios do Nordeste</h1>
+```
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Passeios</a>
+      <a href="#">Destinos</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+    </nav>
 
-          <p>
-            Viva experiências inesquecíveis nos destinos mais procurados do
-            Brasil.
-          </p>
+    <div className="buttons">
+      <button className="login-btn">Entrar</button>
+      <button className="reserve-btn">Reservar Agora</button>
+    </div>
+  </header>
 
-          <button className="cta">
-            Reservar Agora
-          </button>
+  <section className="hero">
+    <div className="hero-content">
+      <h1>Descubra os Melhores Passeios do Nordeste</h1>
+
+      <p>
+        Viva experiências inesquecíveis nos destinos mais procurados do
+        litoral brasileiro.
+      </p>
+
+      <button className="cta">
+        Explorar Passeios
+      </button>
+    </div>
+  </section>
+
+  <section className="destinos">
+    <h2>Passeios em Destaque</h2>
+
+    <div className="cards">
+      {tours.map((tour) => (
+        <div className="card" key={tour.nome}>
+          <img src={tour.imagem} alt={tour.nome} />
+
+          <div className="card-content">
+            <span>⭐ {tour.nota}</span>
+
+            <h3>{tour.nome}</h3>
+
+            <p>{tour.local}</p>
+
+            <h4>{tour.preco}</h4>
+
+            <button>Reservar Agora</button>
+          </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </section>
 
-      <section className="destinos">
-        <h2>Passeios em Destaque</h2>
+  <section className="popular">
+    <h2>Destinos Mais Procurados</h2>
 
-        <div className="cards">
-          {tours.map((tour) => (
-            <div className="card" key={tour.nome}>
-              <img src={tour.imagem} alt={tour.nome} />
-
-              <div className="card-content">
-                <h3>{tour.nome}</h3>
-
-                <p>{tour.preco}</p>
-
-                <button>Reservar</button>
-              </div>
-            </div>
-          ))}
+    <div className="popular-grid">
+      {destinos.map((item) => (
+        <div key={item} className="popular-card">
+          {item}
         </div>
-      </section>
+      ))}
+    </div>
+  </section>
 
-      <section className="beneficios">
-        <h2>Por que escolher a Litorais Tour?</h2>
+  <section className="beneficios">
+    <h2>Por Que Escolher a Litorais Tour?</h2>
 
-        <div className="beneficios-grid">
-          <div>✔ Guias Especializados</div>
-          <div>✔ Passeios Seguros</div>
-          <div>✔ Pagamento Facilitado</div>
-          <div>✔ Atendimento Premium</div>
-        </div>
-      </section>
+    <div className="beneficios-grid">
+      <div>✔ Guias Especializados</div>
+      <div>✔ Atendimento Premium</div>
+      <div>✔ Passeios Seguros</div>
+      <div>✔ Melhor Custo Benefício</div>
+    </div>
+  </section>
 
-      <footer>
-        <h3>Litorais Tour</h3>
+  <section className="depoimentos">
+    <h2>O Que Nossos Clientes Dizem</h2>
 
-        <p>WhatsApp: (85) 99999-9999</p>
+    <div className="depoimentos-grid">
+      <div className="depoimento">
+        ⭐⭐⭐⭐⭐
+        <p>
+          Passeio incrível. Atendimento excelente e organização perfeita.
+        </p>
+        <strong>Maria Silva</strong>
+      </div>
 
-        <p>Instagram: @litoraistour</p>
+      <div className="depoimento">
+        ⭐⭐⭐⭐⭐
+        <p>
+          Melhor experiência de viagem que já tive no Ceará.
+        </p>
+        <strong>João Pereira</strong>
+      </div>
 
-        <p>© 2026 Todos os direitos reservados</p>
-      </footer>
-    </>
-  );
+      <div className="depoimento">
+        ⭐⭐⭐⭐⭐
+        <p>
+          Equipe muito atenciosa. Voltarei a contratar.
+        </p>
+        <strong>Ana Costa</strong>
+      </div>
+    </div>
+  </section>
+
+  <section className="processo">
+    <h2>Como Funciona</h2>
+
+    <div className="steps">
+      <div>1️⃣ Escolha o Passeio</div>
+      <div>2️⃣ Faça sua Reserva</div>
+      <div>3️⃣ Receba a Confirmação</div>
+      <div>4️⃣ Aproveite a Experiência</div>
+    </div>
+  </section>
+
+  <footer>
+    <h3>Litorais Tour</h3>
+
+    <p>WhatsApp: (85) 99999-9999</p>
+    <p>Instagram: @litoraistour</p>
+    <p>Email: contato@litoraistour.com.br</p>
+
+    <p>© 2026 Todos os direitos reservados</p>
+  </footer>
+
+  <a
+    href="https://wa.me/5585999999999"
+    className="whatsapp"
+    target="_blank"
+  >
+    💬
+  </a>
+</>
+
+
+);
 }
 
 export default App;
