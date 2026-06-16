@@ -42,7 +42,7 @@ return (
 <> <header className="navbar"> 
   
   <div className="logo">
-  🌴 Litorais Tour
+  <img src="favicon.jpg"/> Litorais Tour
 </div>
 
 
@@ -54,7 +54,7 @@ return (
       <a href="#">Contato</a>
 
       <a href="/litoraistour/admin">
-     Painel Admin
+     
       </a>
 
     </nav>

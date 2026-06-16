@@ -40,6 +40,11 @@ font-weight: 800;
 color: #0099ff;
 }
 
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
 .navbar nav {
 display: flex;
 gap: 25px;
