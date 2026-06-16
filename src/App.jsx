@@ -198,24 +198,20 @@ return (
 
 </footer>
 
-  <a
-    href="https://wa.me/5585999999999"
-    className="whatsapp"
-    target="_blank"
-  >
-    💬
-  </a>
-
-  <a
-  href="https://wa.me/5585999999999"
+ 
+<a
+  href="https://wa.me/5581994831601?text=Olá!%20Tenho%20interesse%20nos%20passeios%20da%20Litorais%20Tour."
   target="_blank"
+  rel="noopener noreferrer"
   className="whatsapp"
 >
-  WhatsApp
+  <img
+    src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+    alt="WhatsApp"
+  />
 </a>
+
 </>
-
-
 );
 }
 
