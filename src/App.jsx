@@ -1,20 +1,21 @@
 import "./index.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
 const tours = [
 {
-nome: "Jericoacoara Premium",
+nome: "Maragogi",
 preco: "R$ 189,90",
-local: "Jericoacoara - CE",
+local: "Caminho de Moisés - AL",
 nota: "4.9",
 imagem:
 "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
 },
 {
-nome: "Canoa Quebrada",
+nome: "Porto de Galinhas",
 preco: "R$ 149,90",
-local: "Aracati - CE",
+local: "Ipojuca - PE",
 nota: "4.8",
 imagem:
 "https://images.unsplash.com/photo-1519046904884-53103b34b206",
@@ -38,36 +39,31 @@ const destinos = [
 "Paracuru",
 ];
 
+const [menuOpen, setMenuOpen] = useState(false);
+
 return (
-<> <header className="navbar"> 
-  
+<> <header className="navbar">
+
   <div className="logo">
-  <img src="favicon.jpg" alt="Litorais Tour"/>
-</div>
+    <img src="favicon.jpg" alt="Litorais Tour" />
+  </div>
 
+  <div
+    className="menu-toggle"
+    onClick={() => setMenuOpen(!menuOpen)}
+  >
+    ☰
+  </div>
 
-    <nav>
-      <a href="#">Início</a>
-      <a href="#">Passeios</a>
-      <a href="#">Destinos</a>
-      <a href="#">Sobre</a>
-      <a href="#">Contato</a>
+  <nav className={menuOpen ? "nav active" : "nav"}>
+    <a href="#">Início</a>
+    <a href="#">Passeios</a>
+    <a href="#">Destinos</a>
+    <a href="#">Sobre</a>
+    <a href="#">Contato</a>
+  </nav>
 
-      <a href="/litoraistour/admin">
-     
-      </a>
-
-    </nav>
-
-    <div className="buttons">
-      <Link to="/login">
-  <button className="login-btn">
-    Entrar
-  </button>
-</Link>
-      <button className="reserve-btn">Reservar Agora</button>
-    </div>
-  </header>
+</header>
 
   <section className="hero">
     <div className="hero-content">
@@ -174,30 +170,51 @@ return (
     </div>
   </section>
 
-  <footer>
+ <footer className="footer">
 
-<h3>Litorais Tour</h3>
+  <div className="footer-container">
 
-<p>Recife - Pernambuco</p>
+    <div className="footer-logo">
+      <img src="favicon.jpg" alt="Litorais Tour" />
 
-<div className="social">
+      <p>
+        Especialistas em passeios turísticos em Pernambuco e Alagoas.
+      </p>
+    </div>
 
-<a href="https://www.instagram.com/litoraistour/?utm_source=wa4a&utm_campaign=wa_vpl_m2_vf_web">Instagram</a>
+    <div className="footer-info">
 
-<a href="#">Facebook</a>
+      <h4>Contato</h4>
 
-<a href="#">TikTok</a>
+      <p>📍 Recife - Pernambuco</p>
 
-<a href="#">YouTube</a>
+      <p>📞 (81) 99225-4120</p>
 
-</div>
+      <p>✉ contato@litoraistour.com.br</p>
 
-<p>
-© 2026 Litorais Tour
-</p>
+    </div>
+
+    <div className="footer-social">
+
+      <h4>Redes Sociais</h4>
+
+      <a href="https://www.instagram.com/litoraistour/?utm_source=wa4a&utm_campaign=wa_vpl_m2_vf_web">Instagram</a>
+
+      <a href="#">Facebook</a>
+
+      <a href="#">TikTok</a>
+
+      <a href="#">YouTube</a>
+
+    </div>
+
+  </div>
+
+  <div className="footer-bottom">
+    © 2026 Litorais Tour - Todos os direitos reservados
+  </div>
 
 </footer>
-
  
 <a
   href="https://wa.me/5581992254120?text=Olá!%20Tenho%20interesse%20nos%20passeios%20da%20Litorais%20Tour."
