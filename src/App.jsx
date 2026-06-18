@@ -42,7 +42,7 @@ return (
 <> <header className="navbar"> 
   
   <div className="logo">
-  <img src="favicon.jpg"/> Litorais Tour
+  <img src="favicon.jpg" alt="Litorais Tour"/>
 </div>
 
 
@@ -178,11 +178,11 @@ return (
 
 <h3>Litorais Tour</h3>
 
-<p>Fortaleza - Ceará</p>
+<p>Recife - Pernambuco</p>
 
 <div className="social">
 
-<a href="#">Instagram</a>
+<a href="https://www.instagram.com/litoraistour/?utm_source=wa4a&utm_campaign=wa_vpl_m2_vf_web">Instagram</a>
 
 <a href="#">Facebook</a>
 
@@ -200,7 +200,7 @@ return (
 
  
 <a
-  href="https://wa.me/5581994831601?text=Olá!%20Tenho%20interesse%20nos%20passeios%20da%20Litorais%20Tour."
+  href="https://wa.me/5581992254120?text=Olá!%20Tenho%20interesse%20nos%20passeios%20da%20Litorais%20Tour."
   target="_blank"
   rel="noopener noreferrer"
   className="whatsapp"

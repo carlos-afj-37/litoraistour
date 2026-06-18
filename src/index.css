@@ -41,8 +41,18 @@ color: #0099ff;
 }
 
 .logo img {
-  height: 60px;
+  height: 110px;
   width: auto;
+  display: block;
+}
+
+.navbar {
+  background: white;
+  padding: 10px 8%;
+  min-height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar nav {
