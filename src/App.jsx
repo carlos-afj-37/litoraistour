@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 function App() {
-const tours = [
+  const [menuOpen, setMenuOpen] = useState(false);
+  const tours = [
 {
 nome: "Maragogi",
 preco: "R$ 189,90",
@@ -23,7 +24,7 @@ imagem:
 {
 nome: "Lagoinha",
 preco: "R$ 139,90",
-local: "Paraipaba - CE",
+local: "Paraipaba - PE",
 nota: "4.7",
 imagem:
 "https://images.unsplash.com/photo-1500375592092-40eb2168fd21",
@@ -39,29 +40,46 @@ const destinos = [
 "Paracuru",
 ];
 
-const [menuOpen, setMenuOpen] = useState(false);
 
-return (
-<> <header className="navbar">
+return (<>
+  {/* TOPO LARANJA */}
 
-  <div className="logo">
-    <img src="favicon.jpg" alt="Litorais Tour" />
+  <div className="topbar">
+    <div className="topbar-content">
+      <span className="inst"> <a href="https://www.instagram.com/litoraistour/?utm_source=wa4a&utm_campaign=wa_vpl_m2_vf_web" target="_blank"><img src="instagram.png" alt="instagram" /></a></span>
+      <span>📞 (81) 99225-4120</span>
+      <span>✉ contato@litoraistour.com.br</span>
+    </div>
   </div>
 
-  <div
-    className="menu-toggle"
-    onClick={() => setMenuOpen(!menuOpen)}
-  >
-    ☰
-  </div>
+  {/* MENU */}
 
-  <nav className={menuOpen ? "nav active" : "nav"}>
-    <a href="#">Início</a>
-    <a href="#">Passeios</a>
-    <a href="#">Destinos</a>
-    <a href="#">Sobre</a>
-    <a href="#">Contato</a>
-  </nav>
+  <header className="navbar">
+
+    <div className="logo">
+      <img src="favicon.png" alt="Litorais Tour" />
+    </div>
+
+    <div
+      className="menu-toggle"
+      onClick={() => setMenuOpen(!menuOpen)}
+    >
+      ☰
+    </div>
+
+    <nav className={menuOpen ? "nav active" : "nav"}>
+      <a href="#">Início</a>
+      <a href="#">Passeios</a>
+      <a href="#">Destinos</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+    </nav>
+
+    <button className="reserve-btn">
+      Reservar Agora
+    </button>
+
+
 
 </header>
 
@@ -175,11 +193,7 @@ return (
   <div className="footer-container">
 
     <div className="footer-logo">
-      <img src="favicon.jpg" alt="Litorais Tour" />
-
-      <p>
-        Especialistas em passeios turísticos em Pernambuco e Alagoas.
-      </p>
+      <img src="favicon.png" alt="Litorais Tour" />
     </div>
 
     <div className="footer-info">
@@ -190,7 +204,7 @@ return (
 
       <p>📞 (81) 99225-4120</p>
 
-      <p>✉ contato@litoraistour.com.br</p>
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;✉ contato@litoraistour.com.br</p>
 
     </div>
 
@@ -198,7 +212,7 @@ return (
 
       <h4>Redes Sociais</h4>
 
-      <a href="https://www.instagram.com/litoraistour/?utm_source=wa4a&utm_campaign=wa_vpl_m2_vf_web">Instagram</a>
+      <a href="https://www.instagram.com/litoraistour/?utm_source=wa4a&utm_campaign=wa_vpl_m2_vf_web"><img src="instagram.png"/>Instagram</a>
 
       <a href="#">Facebook</a>
 
